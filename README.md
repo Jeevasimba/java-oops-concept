@@ -137,3 +137,102 @@ Now, we can create objects of our Counter class in main, and access the static v
 
 Use the final keyword to mark a variable constant, so that it can be assigned only once. 
 
+**Java Annotations**
+
+Built-In Java Annotations used in Java code
+
+    @Override
+    @SuppressWarnings
+    @Deprecated
+
+Built-In Java Annotations used in other annotations
+
+    @Target
+    @Retention
+    @Inherited
+    @Documented
+
+**Java Custom Annotations**
+
+Java Custom annotations or Java User-defined annotations are easy to create and use. 
+The @interface element is used to declare an annotation. 
+For example:
+
+         @interface MyAnnotation{}  
+
+Here, MyAnnotation is the custom annotation name.
+Points to remember for java custom annotation signature
+
+There are few points that should be remembered by the programmer.
+
+    Method should not have any throws clauses
+    Method should return one of the following: primitive data types, String, Class, enum or array of these data types.
+    Method should not have any parameter.
+    We should attach @ just before interface keyword to define annotation.
+    It may assign a default value to the method.
+
+**Types of Annotation**
+
+There are three types of annotations.
+
+    Marker Annotation
+    Single-Value Annotation
+    Multi-Value Annotation
+
+
+**1) Marker Annotation**
+
+An annotation that has no method, is called marker annotation. For example:
+
+         @interface MyAnnotation{}  
+
+The @Override and @Deprecated are marker annotations.
+
+**2) Single-Value Annotation**
+
+An annotation that has one method, is called single-value annotation. For example:
+
+    @interface MyAnnotation{  
+    int value();  
+    }  
+
+We can provide the default value also. For example:
+
+    @interface MyAnnotation{  
+    int value() default 0;  
+    }  
+
+**How to apply Single-Value Annotation**
+
+Let's see the code to apply the single value annotation
+
+        @MyAnnotation(value=10)  
+
+The value can be anything.
+
+**3) Multi-Value Annotation**
+
+An annotation that has more than one method, is called Multi-Value annotation. For example:
+
+    @interface MyAnnotation{  
+    int value1();  
+    String value2();  
+    String value3();  
+    }  
+    }  
+
+
+We can provide the default value also. For example:
+
+    @interface MyAnnotation{  
+    int value1() default 1;  
+    String value2() default "";  
+    String value3() default "xyz";  
+    }  
+
+**How to apply Multi-Value Annotation**
+
+Let's see the code to apply the multi-value annotation.
+
+    @MyAnnotation(value1=10,value2="Arun Kumar",value3="Ghaziabad")  
+
